@@ -1,0 +1,24 @@
+﻿sample_id,toxicity_label,broadcast_risk_decision,bias_categories,context_types,severity,codex_confidence,needs_human_review,rationale_short
+mbc-6832028-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6831513-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6830360-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.8,False,국적·국가가 언급되지만 스포츠/국제정치 사실 보도 맥락이며 집단 비하 표현은 아니다.
+mbc-6829553-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6832329-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6832329-02,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6832015-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6832020-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6823447-01,nontoxic,acceptable,no_bias,quoted_critical_mention,0,0.78,False,"국제정치 보도에서 타인의 주장/조롱을 인용하는 맥락으로, 보호집단 차별·혐오 표현은 아니다."
+mbc-6828350-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6825419-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6830105-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6832024-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6803854-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6803854-02,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6831761-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.8,False,국적·국가가 언급되지만 스포츠/국제정치 사실 보도 맥락이며 집단 비하 표현은 아니다.
+mbc-6796031-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6830954-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6831766-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.8,False,국적·국가가 언급되지만 스포츠/국제정치 사실 보도 맥락이며 집단 비하 표현은 아니다.
+mbc-6822993-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6796376-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6827366-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
+mbc-6828083-01,toxic,needs_review,regional_bias,quoted_critical_mention|derogatory_expression,2,0.9,True,지역 비하 논란을 보도·비판하는 맥락이지만 지역 혐오/비하 표현이 segment 안에 존재하므로 toxic mention으로 표시한다.

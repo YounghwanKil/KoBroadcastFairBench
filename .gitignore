@@ -1,0 +1,16 @@
+.secret/
+.env
+*.key
+*.pem
+*.zip
+*.z01
+*.wav
+*.mp3
+*.mp4
+*.html.raw
+raw_cache/
+raw/
+cache/
+__pycache__/
+*.pyc
+.DS_Store

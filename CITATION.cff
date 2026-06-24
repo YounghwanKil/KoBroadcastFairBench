@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: KoBroadcastFairBench
+type: dataset
+message: "If you use this benchmark definition, please cite the repository."
+authors:
+  - family-names: Gil
+    given-names: Younghwan
+repository-code: "https://github.com/YounghwanKil/KoBroadcastFairBench"
+abstract: "A benchmark project for context-aware fairness evaluation in Korean broadcast scripts."
+keywords:
+  - Korean
+  - broadcast scripts
+  - fairness
+  - toxicity
+  - benchmark
+license: MIT

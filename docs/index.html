@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KoBroadcastFairBench</title>
+  <style>
+    :root { --ink:#172033; --muted:#64748b; --blue:#2563eb; --purple:#7c3aed; --green:#059669; --amber:#d97706; --red:#dc2626; --card:#f8fafc; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); line-height:1.55; background:#fff; }
+    header { padding:72px 24px; color:white; background:linear-gradient(135deg,#111827,#1e3a8a 55%,#312e81); }
+    .wrap { max-width:1080px; margin:0 auto; }
+    h1 { font-size:clamp(2.2rem,5vw,4.2rem); line-height:1.05; margin:0 0 16px; letter-spacing:-0.04em; }
+    h2 { margin-top:46px; font-size:2rem; letter-spacing:-0.03em; }
+    h3 { margin:0 0 8px; }
+    .subtitle { max-width:860px; font-size:1.25rem; color:#dbeafe; }
+    .tag { display:inline-block; border:1px solid rgba(255,255,255,.25); border-radius:999px; padding:6px 12px; margin:6px 6px 0 0; background:rgba(255,255,255,.12); font-size:.92rem; }
+    .grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+    .card { background:var(--card); border:1px solid #e2e8f0; border-left:5px solid var(--blue); border-radius:14px; padding:18px; }
+    .card.green { border-left-color:var(--green); } .card.purple { border-left-color:var(--purple); } .card.amber { border-left-color:var(--amber); } .card.red { border-left-color:var(--red); }
+    main { padding:34px 24px 70px; }
+    table { border-collapse:collapse; width:100%; font-size:.95rem; overflow:hidden; border-radius:12px; }
+    th { text-align:left; background:#1e293b; color:#fff; }
+    th,td { padding:10px 12px; border-bottom:1px solid #e2e8f0; vertical-align:top; }
+    tr:nth-child(even) td { background:#f8fafc; }
+    code { background:#e2e8f0; padding:2px 5px; border-radius:5px; }
+    a { color:var(--blue); font-weight:600; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .notice { border:1px solid #fde68a; background:#fffbeb; color:#78350f; padding:16px; border-radius:12px; }
+    .flow { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+    .step { color:white; background:var(--blue); padding:9px 12px; border-radius:10px; font-weight:700; }
+    .arrow { color:#94a3b8; font-weight:800; }
+    footer { padding:30px 24px; border-top:1px solid #e2e8f0; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>KoBroadcastFairBench</h1>
+      <p class="subtitle">A benchmark project for context-aware fairness evaluation in Korean broadcast scripts.</p>
+      <span class="tag">Korean broadcast scripts</span>
+      <span class="tag">toxic / non-toxic</span>
+      <span class="tag">fairness taxonomy</span>
+      <span class="tag">Codex-assisted labeling</span>
+      <span class="tag">SWA baseline</span>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="notice">
+      <strong>Status:</strong> benchmark construction in progress. This public page contains schemas, taxonomy, prompts, metadata, and pilot labels only. It does not redistribute raw AI Hub or broadcaster text/audio.
+    </section>
+
+    <h2>Goal</h2>
+    <p>Build a real Korean broadcast-script fairness benchmark, create Codex-assisted toxic/non-toxic and taxonomy pre-labels, human-adjudicate a locked test set, and evaluate whether RoBERTa + SWA outperforms non-SWA baselines.</p>
+
+    <div class="flow" aria-label="workflow">
+      <span class="step">Real broadcast scripts</span><span class="arrow">→</span>
+      <span class="step" style="background:#7c3aed">Codex pre-labels</span><span class="arrow">→</span>
+      <span class="step" style="background:#dc2626">Human adjudication</span><span class="arrow">→</span>
+      <span class="step" style="background:#059669">Locked benchmark</span><span class="arrow">→</span>
+      <span class="step" style="background:#d97706">SWA ablation</span>
+    </div>
+
+    <h2>Priority sources</h2>
+    <table>
+      <thead><tr><th>Priority</th><th>Source</th><th>Role</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>AI Hub 71557: 뉴스 대본 및 앵커 음성 데이터</td><td>Core news broadcast-script benchmark</td></tr>
+        <tr><td>2</td><td>AI Hub 591: 방송 콘텐츠 대본 요약 데이터</td><td>General broadcast genre expansion</td></tr>
+        <tr><td>3</td><td>AI Hub 71314 / 463: 방송콘텐츠 대화체 음성인식</td><td>Dialogue and speaker-metadata extension</td></tr>
+        <tr><td>4</td><td>AI Hub 558: 텍스트 윤리검증 데이터</td><td>Auxiliary toxicity/ethics calibration</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Released artifacts</h2>
+    <div class="grid">
+      <div class="card"><h3>Dataset card</h3><p><a href="../DATASET_CARD.md">DATASET_CARD.md</a></p></div>
+      <div class="card purple"><h3>Task board</h3><p><a href="../BENCHMARK_TASKS.md">BENCHMARK_TASKS.md</a></p></div>
+      <div class="card green"><h3>Taxonomy</h3><p><a href="../taxonomy/taxonomy_v1_kobroadcastfairbench.md">taxonomy v1</a></p></div>
+      <div class="card amber"><h3>Prompt</h3><p><a href="../prompts/codex_toxic_taxonomy_label_prompt_v1.md">Codex label prompt</a></p></div>
+      <div class="card"><h3>Schema</h3><p><a href="../schemas/codex_toxic_taxonomy_label_schema.json">JSON schema</a></p></div>
+      <div class="card red"><h3>Slides</h3><p><a href="assets/KoBroadcastFairBench_meeting_deck_20260624.pdf">meeting deck PDF</a></p></div>
+    </div>
+
+    <h2>Pilot metadata</h2>
+    <p>The pilot contains label metadata for 23 public MBC broadcast-news transcript segments. Raw text is not included. The pilot validates the release format before AI Hub data approval.</p>
+    <ul>
+      <li><a href="../data/pilot/mbc_public_segment_manifest.jsonl">segment manifest</a></li>
+      <li><a href="../data/pilot/mbc_public_codex_toxic_taxonomy_labels_v0.jsonl">Codex-assisted pre-labels</a></li>
+      <li><a href="../data/pilot/mbc_public_codex_toxic_taxonomy_summary.csv">CSV summary</a></li>
+    </ul>
+
+    <h2>Validation</h2>
+    <pre><code>python scripts/validate_labels.py</code></pre>
+  </main>
+  <footer>
+    <div class="wrap">KoBroadcastFairBench · Public benchmark definitions and metadata only.</div>
+  </footer>
+</body>
+</html>
