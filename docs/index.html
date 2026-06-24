@@ -41,7 +41,7 @@
       <span class="tag">Korean broadcast scripts</span>
       <span class="tag">toxic / non-toxic</span>
       <span class="tag">fairness taxonomy</span>
-      <span class="tag">Codex-assisted labeling</span>
+      <span class="tag">GPT/Codex silver-label labeling</span>
       <span class="tag">SWA baseline</span>
     </div>
   </header>
@@ -51,12 +51,12 @@
     </section>
 
     <h2>Goal</h2>
-    <p>Build a real Korean broadcast-script fairness benchmark, create Codex-assisted toxic/non-toxic and taxonomy pre-labels, human-adjudicate a locked test set, and evaluate whether RoBERTa + SWA outperforms non-SWA baselines.</p>
+    <p>Build a real Korean broadcast-script fairness benchmark, create GPT/Codex silver-label toxic/non-toxic and taxonomy silver labels, freeze a GPT/Codex silver-label test set, and evaluate whether RoBERTa + SWA outperforms non-SWA baselines.</p>
 
     <div class="flow" aria-label="workflow">
       <span class="step">Real broadcast scripts</span><span class="arrow">→</span>
-      <span class="step" style="background:#7c3aed">Codex pre-labels</span><span class="arrow">→</span>
-      <span class="step" style="background:#dc2626">Human adjudication</span><span class="arrow">→</span>
+      <span class="step" style="background:#7c3aed">Codex silver labels</span><span class="arrow">→</span>
+      <span class="step" style="background:#dc2626">GPT/Codex silver-label locking</span><span class="arrow">→</span>
       <span class="step" style="background:#059669">Locked benchmark</span><span class="arrow">→</span>
       <span class="step" style="background:#d97706">SWA ablation</span>
     </div>
@@ -77,7 +77,7 @@
       <div class="card"><h3>Dataset card</h3><p><a href="https://github.com/YounghwanKil/KoBroadcastFairBench/blob/main/DATASET_CARD.md">DATASET_CARD.md</a></p></div>
       <div class="card purple"><h3>Task board</h3><p><a href="https://github.com/YounghwanKil/KoBroadcastFairBench/blob/main/BENCHMARK_TASKS.md">BENCHMARK_TASKS.md</a></p></div>
       <div class="card green"><h3>Taxonomy</h3><p><a href="https://github.com/YounghwanKil/KoBroadcastFairBench/blob/main/taxonomy/taxonomy_v1_kobroadcastfairbench.md">taxonomy v1</a></p></div>
-      <div class="card amber"><h3>Prompt</h3><p><a href="https://github.com/YounghwanKil/KoBroadcastFairBench/blob/main/prompts/codex_toxic_taxonomy_label_prompt_v1.md">Codex label prompt</a></p></div>
+      <div class="card amber"><h3>Prompt</h3><p><a href="https://github.com/YounghwanKil/KoBroadcastFairBench/blob/main/prompts/codex_toxic_taxonomy_label_prompt_v1.md">GPT/Codex silver label prompt</a></p></div>
       <div class="card"><h3>Schema</h3><p><a href="https://github.com/YounghwanKil/KoBroadcastFairBench/blob/main/schemas/codex_toxic_taxonomy_label_schema.json">JSON schema</a></p></div>
       <div class="card red"><h3>Slides</h3><p><a href="assets/KoBroadcastFairBench_meeting_deck_20260624.pdf">meeting deck PDF</a></p></div>
     </div>
@@ -86,7 +86,7 @@
     <p>The pilot contains label metadata for 23 public MBC broadcast-news transcript segments. Raw text is not included. The pilot validates the release format before AI Hub data approval.</p>
     <ul>
       <li><a href="https://github.com/YounghwanKil/KoBroadcastFairBench/blob/main/data/pilot/mbc_public_segment_manifest.jsonl">segment manifest</a></li>
-      <li><a href="https://github.com/YounghwanKil/KoBroadcastFairBench/blob/main/data/pilot/mbc_public_codex_toxic_taxonomy_labels_v0.jsonl">Codex-assisted pre-labels</a></li>
+      <li><a href="https://github.com/YounghwanKil/KoBroadcastFairBench/blob/main/data/pilot/mbc_public_codex_toxic_taxonomy_labels_v0.jsonl">GPT/Codex silver-label silver labels</a></li>
       <li><a href="https://github.com/YounghwanKil/KoBroadcastFairBench/blob/main/data/pilot/mbc_public_codex_toxic_taxonomy_summary.csv">CSV summary</a></li>
     </ul>
 

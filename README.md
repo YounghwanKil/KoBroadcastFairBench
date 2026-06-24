@@ -4,7 +4,7 @@
 
 The immediate goal is practical and narrow:
 
-> Build a real Korean broadcast-script benchmark, use Codex-assisted toxic/non-toxic and fairness-taxonomy pre-labeling, human-adjudicate a locked test set, and evaluate whether the existing RoBERTa + SWA baseline outperforms a non-SWA baseline.
+> Build a real Korean broadcast-script benchmark, use GPT/Codex silver-label toxic/non-toxic and fairness-taxonomy labeling, freeze a real-broadcast silver-label test set, and evaluate whether the existing RoBERTa + SWA baseline outperforms a non-SWA baseline.
 
 ## Why this benchmark?
 
@@ -19,12 +19,12 @@ Existing project code under the related broadcast task is based on KLUE-NER with
 ## Current status
 
 - [x] Taxonomy v1 drafted.
-- [x] Codex-assisted label schema/prompt drafted.
+- [x] GPT/Codex silver-label label schema/prompt drafted.
 - [x] Pilot labels generated on 23 public MBC broadcast-news transcript segments without redistributing raw text.
 - [x] Priority real-data sources identified.
 - [ ] AI Hub dataset download approval pending.
 - [ ] AI Hub 71557 / 591 ingestion.
-- [ ] Human adjudication protocol and locked test set.
+- [ ] GPT/Codex silver-label locking protocol.
 - [ ] RoBERTa non-SWA vs SWA benchmark table.
 
 ## Priority data sources
@@ -49,7 +49,7 @@ Raw AI Hub data is **not** included in this repository. Follow each dataset's te
 ├── data/pilot/                       # label metadata only, no raw broadcast text
 ├── docs/                             # GitHub Pages site
 ├── guidelines/                       # annotation guideline
-├── prompts/                          # Codex-assisted labeling prompt
+├── prompts/                          # GPT/Codex silver-label labeling prompt
 ├── schemas/                          # label JSON schema
 ├── scripts/                          # validation helpers
 └── taxonomy/                         # fairness taxonomy
@@ -66,9 +66,9 @@ python scripts/validate_labels.py \
 Expected pilot summary:
 
 - 23 real public broadcast-news segments in the manifest,
-- 22 nontoxic pre-labels,
-- 1 toxic mention pre-label,
-- 1 regional-bias candidate requiring human review.
+- 22 nontoxic silver labels,
+- 1 toxic mention silver label,
+- 1 regional-bias toxic mention marked for second GPT pass.
 
 ## Important release policy
 

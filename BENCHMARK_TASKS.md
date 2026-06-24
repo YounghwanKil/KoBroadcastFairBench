@@ -19,7 +19,7 @@
 
 - [ ] Normalize scripts into `sample_id`, `source`, `genre`, `speaker`, `text`, `metadata`.
 - [ ] Segment scripts into 3-15 turn units or paragraph units.
-- [ ] Run Codex-assisted toxic/non-toxic + taxonomy pre-labeling.
+- [ ] Run GPT/Codex silver-label toxic/non-toxic + taxonomy silver-labeling.
 - [ ] Export human annotation sheets.
 - [ ] Adjudicate labels and freeze locked test split.
 

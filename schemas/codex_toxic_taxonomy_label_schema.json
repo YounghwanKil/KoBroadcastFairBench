@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "KoBroadcastFairBench Codex-assisted toxic/taxonomy label",
+  "title": "KoBroadcastFairBench GPT/Codex silver-label toxic/taxonomy label",
   "type": "object",
   "required": [
     "sample_id",
@@ -12,37 +12,115 @@
     "context_types",
     "severity",
     "codex_confidence",
-    "needs_human_review",
+    "needs_second_llm_pass",
     "rationale_short"
   ],
   "properties": {
-    "sample_id": {"type": "string"},
-    "source": {"type": "string"},
-    "source_url": {"type": "string"},
-    "labeling_source": {"enum": ["codex_assisted_v0", "human_adjudicated_v1", "rule_weak_label", "unknown"]},
-    "toxicity_label": {"enum": ["toxic", "nontoxic", "uncertain"]},
-    "toxicity_definition": {"type": "string"},
-    "broadcast_risk_decision": {"enum": ["acceptable", "needs_review", "problematic", "uncertain"]},
-    "risk_labels": {"type": "array", "items": {"type": "string"}},
-    "bias_categories": {"type": "array", "items": {"type": "string"}},
-    "context_types": {"type": "array", "items": {"type": "string"}},
-    "protected_attributes_mentioned": {"type": "array", "items": {"type": "string"}},
-    "severity": {"type": "integer", "minimum": 0, "maximum": 3},
-    "codex_confidence": {"type": "number", "minimum": 0, "maximum": 1},
-    "needs_human_review": {"type": "boolean"},
-    "rationale_short": {"type": "string"},
+    "sample_id": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "labeling_source": {
+      "enum": [
+        "gpt_silver_v1",
+        "gpt_second_pass_v1",
+        "rule_weak_label",
+        "unknown"
+      ]
+    },
+    "toxicity_label": {
+      "enum": [
+        "toxic",
+        "nontoxic",
+        "uncertain"
+      ]
+    },
+    "toxicity_definition": {
+      "type": "string"
+    },
+    "broadcast_risk_decision": {
+      "enum": [
+        "acceptable",
+        "needs_review",
+        "problematic",
+        "uncertain"
+      ]
+    },
+    "risk_labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "bias_categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "context_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "protected_attributes_mentioned": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "severity": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "codex_confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "needs_second_llm_pass": {
+      "type": "boolean"
+    },
+    "rationale_short": {
+      "type": "string"
+    },
     "risk_spans": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["start", "end", "label"],
+        "required": [
+          "start",
+          "end",
+          "label"
+        ],
         "properties": {
-          "start": {"type": "integer", "minimum": 0},
-          "end": {"type": "integer", "minimum": 0},
-          "label": {"type": "string"},
-          "bias_category": {"type": "string"},
-          "context_type": {"type": "string"},
-          "reason": {"type": "string"}
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "label": {
+            "type": "string"
+          },
+          "bias_category": {
+            "type": "string"
+          },
+          "context_type": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
         }
       }
     }

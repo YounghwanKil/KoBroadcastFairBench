@@ -74,7 +74,7 @@
 
 판단:
 - 방송 데이터는 아니므로 최종 test에는 넣지 않는다.
-- Codex labeling prompt 보정, toxic classifier pretraining, label mapping sanity check에 사용한다.
+- GPT/Codex silver labeling prompt 보정, toxic classifier pretraining, label mapping sanity check에 사용한다.
 
 ## 3. 방송윤리/심의 기준 데이터
 
@@ -104,7 +104,7 @@
 
 판단:
 - 방송대본 test에는 넣지 않는다.
-- Codex pre-label 검증, toxic/nontoxic classifier pretraining, label taxonomy mapping에만 사용한다.
+- Codex silver label 검증, toxic/nontoxic classifier pretraining, label taxonomy mapping에만 사용한다.
 
 ## 5. 당장 해야 할 일
 
@@ -126,7 +126,7 @@ cd /mnt/c/Users/yhgil/broadcast_fairness_2026
 ## 6. Benchmark 구축 전략 업데이트
 - 71557 뉴스 대본을 news benchmark core로 사용.
 - 591을 장르 다양성 확장으로 사용.
-- 558을 toxic/non-toxic pre-label calibration으로 사용.
-- Codex가 실제 방송 segment에 toxic/nontoxic, category, context, span offset을 pre-label.
-- Human adjudication으로 locked test label 확정.
+- 558을 toxic/non-toxic silver label calibration으로 사용.
+- Codex가 실제 방송 segment에 toxic/nontoxic, category, context, span offset을 silver label.
+- GPT/Codex silver-label locking으로 locked test label 확정.
 - 최종 실험은 RoBERTa base/large의 non-SWA vs SWA 비교.

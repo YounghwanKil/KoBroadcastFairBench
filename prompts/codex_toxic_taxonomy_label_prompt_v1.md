@@ -1,7 +1,7 @@
-# Codex-assisted toxic/non-toxic + fairness taxonomy labeling prompt v1
+# GPT/Codex silver-label toxic/non-toxic + fairness taxonomy labeling prompt v1
 
 역할: 한국어 방송대본 공정성 benchmark 1차 annotator.
-목표: 실제 방송 데이터 segment를 읽고, 최종 human 검수 전 pre-label을 생성한다.
+목표: 실제 방송 데이터 segment를 읽고, 최종 silver label을 생성한다.
 
 ## Label axes
 1. `toxicity_label`
@@ -11,7 +11,7 @@
 
 2. `broadcast_risk_decision`
    - `acceptable`: 보도/정책/통계/스포츠 맥락상 정당하고 수정 필요성이 낮다.
-   - `needs_review`: toxic 표현이 인용·비판·논란 보도 목적으로 등장하거나, 맥락이 애매해 human adjudication이 필요하다.
+   - `needs_review`: toxic 표현이 인용·비판·논란 보도 목적으로 등장하거나, 맥락이 애매해 GPT/Codex silver-label locking이 필요하다.
    - `problematic`: 방송 문장 자체가 특정 집단을 차별·비하하거나 고정관념을 강화한다.
    - `uncertain`: 추가 맥락 없이는 결정 불가.
 
@@ -25,7 +25,7 @@
 ```json
 {
   "sample_id": "...",
-  "labeling_source": "codex_assisted_v0",
+  "labeling_source": "gpt_silver_v1",
   "toxicity_label": "toxic|nontoxic|uncertain",
   "broadcast_risk_decision": "acceptable|needs_review|problematic|uncertain",
   "risk_labels": ["no_issue"],
@@ -34,7 +34,7 @@
   "protected_attributes_mentioned": [],
   "severity": 0,
   "codex_confidence": 0.0,
-  "needs_human_review": true,
+  "needs_second_llm_pass": true,
   "rationale_short": "Korean one-sentence rationale",
   "risk_spans": []
 }
@@ -44,5 +44,5 @@
 - 실제 방송 데이터만 label한다. Synthetic text는 benchmark test에 넣지 않는다.
 - Toxic/nontoxic은 triage axis이고, 최종 공정성 평가는 taxonomy/context label과 함께 본다.
 - 인용·비판·보도 목적 표현은 `toxicity_label=toxic`, `context_types=[quoted_critical_mention]`, `broadcast_risk_decision=needs_review`로 분리한다.
-- 확신이 낮으면 과감히 `uncertain` 또는 `needs_human_review=true`로 둔다.
+- 확신이 낮으면 과감히 `uncertain` 또는 `needs_second_llm_pass=true`로 둔다.
 - Raw text 재배포가 제한될 수 있으므로 label artifact에는 가능하면 sample_id/span offset만 저장한다.

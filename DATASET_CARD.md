@@ -52,14 +52,14 @@ Core planned sources:
 ## Labeling workflow
 
 1. Segment real broadcast scripts.
-2. Run Codex-assisted pre-labeling.
-3. Prioritize toxic / uncertain / low-confidence samples for human review.
-4. Human adjudicate and freeze the test set.
+2. Run GPT/Codex silver-labeling.
+3. Run an optional second GPT/Codex pass for toxic / uncertain / low-confidence samples.
+4. Freeze the GPT/Codex silver-label test set.
 5. Use train/dev labels for model tuning and the locked test set for final reporting.
 
 ## Known limitations
 
-- Pilot labels are pre-labels, not gold labels.
+- Pilot labels are GPT/Codex silver labels, not human gold labels.
 - Raw broadcast text is not redistributed here.
 - AI Hub access requires dataset approval.
 - Broadcast fairness depends on video, tone, and production context; text-only labels can be incomplete.

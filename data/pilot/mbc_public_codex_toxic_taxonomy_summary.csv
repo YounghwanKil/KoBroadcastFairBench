@@ -1,4 +1,4 @@
-﻿sample_id,toxicity_label,broadcast_risk_decision,bias_categories,context_types,severity,codex_confidence,needs_human_review,rationale_short
+﻿sample_id,toxicity_label,broadcast_risk_decision,bias_categories,context_types,severity,codex_confidence,needs_second_llm_pass,rationale_short
 mbc-6832028-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
 mbc-6831513-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.72,False,명시적인 차별·혐오·비하 표현 없이 통상적인 방송 보도/해설 맥락으로 판단한다.
 mbc-6830360-01,nontoxic,acceptable,no_bias,non_discriminatory_context,0,0.8,False,국적·국가가 언급되지만 스포츠/국제정치 사실 보도 맥락이며 집단 비하 표현은 아니다.
